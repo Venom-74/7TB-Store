@@ -1,19 +1,129 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر 7TB | الصفحة الرئيسية</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: #111;
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid #222;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-image-wrapper {
+            width: 100%;
+            height: 220px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #333;
+        }
+
+        .product-image-wrapper img.main-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image-wrapper img.main-img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: #fff;
+        }
+
+        .product-info p {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            margin: 0 0 10px 0;
+            min-height: 32px; 
+        }
+
+        .product-info .price {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: auto;
+        }
+
+        
+        .thumb-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .thumb-container img {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            background: #000;
+            object-fit: contain;
+        }
+
+        .thumb-container img.active {
+            border-color: #e67e22;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
         <nav class="container">
             <div class="logo">7TB<span>.</span></div>
             <ul>
-                <li><a href="#mugs">مجات</a></li>
                 <li><a href="#tshirts">تيشرتات</a></li>
+                <li><a href="#mugs">مجات</a></li>
                 <li><a href="#stickers">ستيكرات</a></li>
                 <li><a href="#frames">براويز</a></li>
             </ul>
@@ -26,133 +136,133 @@
     </section>
 
     <main class="container">
-        <h2 id="tshirts" class="section-title" style="margin-bottom: 5px;">تيشرتات 7TB</h2>
-<p style="text-align: center; color: #888; font-size: 0.8rem; margin-bottom: 30px;">
-    (السعر الموضح للتصميم الكبير وش وضهر - يختلف السعر حسب الحجم أو الطباعة وجه واحد)
-</p>
-<div class="products-grid">
+        
+        <!-- قسم التيشرتات -->
+        <h2 id="tshirts" class="section-title" style="text-align: center; margin-bottom: 5px;">تيشرتات 7TB</h2>
+        <p style="text-align: center; color: #888; font-size: 0.8rem; margin-bottom: 30px;">
+            (السعر الموضح للتصميم الكبير وش وضهر - يختلف السعر حسب الحجم أو الطباعة وجه واحد)
+        </p>
+        
+        <div class="products-grid">
 
-    <div class="product-card">
-    <a href="bolivar.html" style="text-decoration: none; color: inherit;">
-        <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; background: #1a1a1a; border-radius: 10px; overflow: hidden;"><img src="./bolivar_print1.jpg" alt="بوليفار مطبوع" style="max-width: 90%; max-height: 90%; object-fit: contain;"></div>
-        
-        <h3>تيشرت بوليفار oversize مطبوع</h3>
-        <p>خامة ثقيلة - طباعة ديجيتال</p>
-        <span class="price">400 EGP</span>
-    </a>
-</div>
-
-    <div class="product-card" style="max-width: 300px; margin: 10px auto;">
-    <a href="bolivar_plain.html" style="text-decoration: none; color: inherit;">
-        <div class="product-image-wrapper" style="width: 100%; height: 200px; overflow: hidden; border-radius: 12px; background: #1a1a1a; margin-bottom: 10px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; padding: 5px;">
             
-            <img src="./bolivar_print4.jpg" alt="المنتج" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            
-        </div>
-        
-        <h3 style="font-size: 1rem; margin-bottom: 5px;">تيشرت بوليفار oversize سادة</h3>
-        <span class="price" style="font-size: 0.95rem; color: #e67e22;">320 EGP</span>
-    </a>
-</div>
-    <div class="product-card" style="position: relative; background: #111; border-radius: 15px; padding: 15px; border: 1px solid #222; text-align: center; height: 380px; display: flex; flex-direction: column; justify-content: space-between;">
-    <a href="cotton.html" style="text-decoration: none; color: inherit;">
-        
-        <div class="product-image-wrapper" style="width: 100%; height: 200px; background: #1a1a1a; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
-            <img src="./cotton_print1.jpg" alt="قطن مطبوع" style="max-width: 90%; max-height: 90%; object-fit: contain;">
-            
-            <div style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 5px;">
-                <img src="./cotton_print1.jpg" style="width: 30px; height: 30px; border-radius: 4px; border: 1px solid #e67e22; background: #000; object-fit: contain;">
-                <img src="./cotton_print2.jpg" style="width: 30px; height: 30px; border-radius: 4px; border: 1px solid #333; background: #000; object-fit: contain;">
-                <img src="./cotton_print3.JPG" style="width: 30px; height: 30px; border-radius: 4px; border: 1px solid #e67e22; background: #000; object-fit: contain;">
-                <img src="./cotton_print4.JPG" style="width: 30px; height: 30px; border-radius: 4px; border: 1px solid #333; background: #000; object-fit: contain;">
+            <div class="product-card">
+                <a href="bolivar.html">
+                    <div class="product-image-wrapper">
+                        <img src="bolivar_print1.jpg" alt="بوليفار مطبوع" class="main-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>تيشرت بوليفار oversize مطبوع</h3>
+                        <p>خامة ثقيلة - طباعة ديجيتال</p>
+                        <span class="price">400 EGP</span>
+                    </div>
+                </a>
             </div>
+
+            
+            <div class="product-card">
+                <a href="bolivar_plain.html">
+                    <div class="product-image-wrapper">
+                        <img src="./bolivar_print4.jpg" alt="بوليفار سادة" class="main-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>تيشرت بوليفار oversize سادة</h3>
+                        <p>خامة ثقيلة مريحة - بدون طباعة</p>
+                        <span class="price">320 EGP</span>
+                    </div>
+                </a>
+            </div>
+
+            
+            <div class="product-card">
+                <a href="cotton.html">
+                    <div class="product-image-wrapper">
+                        <img src="./cotton_print1.jpg" alt="قطن مطبوع" class="main-img">
+                        <div class="thumb-container">
+                            <img src="./cotton_print1.jpg" class="active">
+                            <img src="./cotton_print2.jpg">
+                            <img src="./cotton_print3.JPG">
+                            <img src="./cotton_print4.JPG">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>تيشرت قطن مطبوع</h3>
+                        <p>قطن 100% - طباعة احترافية</p>
+                        <span class="price">300 EGP</span>
+                    </div>
+                </a>
+            </div>
+
+           
+            <div class="product-card">
+                <a href="cotton_plain.html">
+                    <div class="product-image-wrapper">
+                        <img src="./cotton_print1.jpg" alt="قطن سادة" class="main-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>تيشرت قطن سادة</h3>
+                        <p>قطن تركي أصلي - خامة ناعمة</p>
+                        <span class="price">250 EGP</span>
+                    </div>
+                </a>
+            </div>
+
         </div>
 
-        <div style="margin-top: 15px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 5px;">تيشرت قطن مطبوع</h3>
-            <p style="color: #a0a0a0; font-size: 0.85rem; margin-bottom: 10px;">قطن 100% - طباعة احترافية</p>
-            <span class="price" style="color: #e67e22; font-weight: bold; font-size: 1.2rem;">EGP 300</span>
-        </div>
-    </a>
-</div>
-    </div>
-
-    <div class="product-card" style="width: 24%; min-width: 200px; background: #111; border-radius: 15px; padding: 15px; border: 1px solid #222; text-align: center; display: inline-block; vertical-align: top; box-sizing: border-box; margin: 4px;">
-    <a href="cotton_plain.html" style="text-decoration: none; color: inherit;">
         
-        <div class="product-image-wrapper" style="width: 100%; height: 180px; background: #1a1a1a; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <img src="./cotton_print1.jpg" alt="قطن سادة" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        <h2 class="section-title" style="text-align: center; margin-top: 5px; margin-bottom: 30px;">منتجات طباعة 7TB</h2>
+        
+        <div class="products-grid">
+            
+           
+            <div class="product-card" id="stickers">
+                <a href="stickers.html">
+                    <div class="product-image-wrapper">
+                        <img src="sticker2.jpg" alt="ستيكرات 7TB" class="main-img" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h3>ستيكرات مخصصة (مقاومة للماء)</h3>
+                        <p>متوفر خامات: ذهبي، فضي، شفاف، وأبيض</p>
+                        <span class="price">تبدأ من 25 EGP</span>
+                    </div>
+                </a>
+            </div>
+
+            
+            <div class="product-card" id="frames">
+                <a href="frame.html">
+                    <div class="product-image-wrapper">
+                        <img src="frame.jpg" alt="برواز 7TB" class="main-img" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h3>برواز مودرن حائطي</h3>
+                        <p>خامات خشبية راقية - ألوان متعددة</p>
+                        <span class="price">تبدأ من 200 EGP</span>
+                    </div>
+                </a>
+            </div>
+
+            
+            <div class="product-card" id="mugs">
+                <a href="mug.html">
+                    <div class="product-image-wrapper">
+                        <img src="mug.jpg" alt="مج مطبوع 7TB" class="main-img" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h3>مج سيراميك مطبوع</h3>
+                        <p>طباعة حرارية ثابتة مقاومة للغسيل</p>
+                        <span class="price">150 EGP</span>
+                    </div>
+                </a>
+            </div>
+
         </div>
 
-        <div style="margin-top: 12px;">
-            <h3 style="font-size: 1.05rem; margin-bottom: 5px;">تيشرت قطن سادة</h3>
-            <p style="color: #a0a0a0; font-size: 0.8rem; margin-bottom: 8px;">قطن تركي أصلي - خامة ناعمة</p>
-            <span class="price" style="color: #e67e22; font-weight: bold; font-size: 1.1rem;">EGP 250</span>
-        </div>
-    </a>
-</div>
-</div>
-
-    <main class="container">
-        <h2 id="tshirts" class="section-title">منتجات طباعة 7TB</h2>
-<div class="products-grid">
-        <!-- قسم الاستيكرات -->
-        <div class="product-card">
-    <a href="stickers.html" style="text-decoration: none; color: inherit;">
-        <div class="product-image-wrapper" style="width: 100%; height: 250px; overflow: hidden; border-radius: 12px; background: #1a1a1a; margin-bottom: 15px; border: 1px solid #333;">
-            <img src="./sticker2.jpg" alt="ستيكرات 7TB" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;">
-        </div>
-        <h3>ستيكرات مخصصة (مقاومة للماء)</h3>
-        <p style="color: #a0a0a0; font-size: 0.9rem;">متوفر خامات: ذهبي، فضي، شفاف، وأبيض</p>
-        <span class="price">تبدأ من 25 EGP</span>
-    </a>
-</div>
-
-<style>
-    /* إضافة تأثير بسيط عند تمرير الماوس على الصورة */
-    .product-image-wrapper:hover img {
-        transform: scale(1.05);
-    }
-</style>
-
-        <!-- قسم البراويز -->
-        <div class="product-card">
-    <a href="frame.html" style="text-decoration: none; color: inherit;">
-        <img src="./frame.jpg" alt="برواز 7TB" style="width:100%; height:250px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
-        <h3>برواز مودرن</h3>
-        <span class="price">تبدأ من 200 EGP</span>
-    </a>
-</div>
-    </a>
-</div>
-
-        <!-- قسم المجات -->
-       <div class="product-card" style="max-width: 400px; margin: 0 auto;">
-    <a href="mug.html" style="text-decoration: none; color: inherit;">
-        <div class="product-image-wrapper" style="width: 100%; height: 200px; overflow: hidden; border-radius: 12px; background: #1a1a1a; margin-bottom: 15px; border: 1px solid #333;">
-            <img src="./mug.JPG" alt="مج مطبوع 7TB" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <h3 style="font-size: 1.1rem;">مج سيراميك مطبوع</h3>
-        <span class="price" style="font-size: 1rem;">150 EGP</span>
-    </a>
-</div>
-    
     </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة لبراند 7TB &copy; 2025</p>
+        <p>جميع الحقوق محفوظة لبراند 7TB &copy; 2026</p>
     </footer>
 
 </body>
-
-
-<nav class="container">
-    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">7TB<span>.</span></a></div>
-    <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="index.html#tshirts">تيشرتات</a></li>
-        <li><a href="index.html#mugs">مجات</a></li>
-        <li><a href="index.html#stickers">ستيكرات</a></li>
-        <li><a href="index.html#frames">براويز</a></li>
-    </ul>
-</nav>
+</html>
