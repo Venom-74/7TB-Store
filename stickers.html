@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ستيكرات مخصصة | 7TB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-container { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px 0; align-items: flex-start; }
+        .product-image-section { flex: 1; min-width: 300px; }
+        .main-image { background: #1a1a1a; height: 400px; border-radius: 15px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 15px; }
+        .main-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* تنسيق الصور المصغرة */
+        .thumbnail-container { display: flex; gap: 10px; justify-content: center; }
+        .thumbnail { width: 70px; height: 70px; border-radius: 8px; border: 2px solid #333; cursor: pointer; transition: 0.3s; overflow: hidden; }
+        .thumbnail:hover { border-color: #e67e22; }
+        .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+
+        .product-info { flex: 1; min-width: 300px; }
+        .price-tag { color: #e67e22; font-size: 2.5rem; margin: 15px 0; font-weight: bold; }
+        .option-group { margin: 20px 0; }
+        .option-group label { display: block; margin-bottom: 8px; color: #a0a0a0; font-weight: bold; }
+        select { width: 100%; padding: 12px; background: #222; color: #fff; border: 1px solid #444; border-radius: 8px; font-size: 1rem; cursor: pointer; }
+        .buy-now { display: block; background: #25d366; color: #fff; text-align: center; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-top: 30px; font-size: 1.2rem; transition: 0.3s; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">7TB<span>.</span></div>
+            <a href="index.html" style="color: #fff; text-decoration: none;">← العودة للمتجر</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-container">
+            
+            <div class="product-image-section">
+                <div class="main-image">
+                    <img id="mainImg" src="sticker2.jpg" alt="ستيكر 7TB">
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail" onclick="changeImage('sticker1.jpg')"><img src="sticker1.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('sticker2.jpg')"><img src="sticker2.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('sticker3.jpg')"><img src="sticker3.jpg"></div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>ستيكرات مخصصة</h1>
+                <p class="price-tag" id="stickerPrice">25 EGP</p>
+                
+                <div class="option-group">
+                    <label>نوع الخامة:</label>
+                    <select id="stickerMaterial">
+                        <option value="أبيض">أبيض </option>
+                        <option value="ذهبي">ذهبي </option>
+                        <option value="فضي">فضي </option>
+                        <option value="لامع">شفاف لامع</option>
+                        <option value="لامع">ابيض فينيل</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label>المقاس:</label>
+                    <select id="stickerSize" onchange="updateStickerPrice()">
+                        <option value="A4" data-price="25">مقاس A4 (25 EGP)</option>
+                        <option value="A3" data-price="50">مقاس A3 (50 EGP)</option>
+                    </select>
+                </div>
+
+                <a href="#" onclick="orderStickers()" class="buy-now">اطلب عبر واتساب</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // وظيفة تبديل الصور
+        function changeImage(fileName) {
+            document.getElementById('mainImg').src = fileName;
+        }
+
+        function updateStickerPrice() {
+            const sizeSelect = document.getElementById('stickerSize');
+            const price = sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-price');
+            document.getElementById('stickerPrice').innerText = price + " EGP";
+        }
+
+        function orderStickers() {
+            const material = document.getElementById('stickerMaterial').value;
+            const size = document.getElementById('stickerSize').value;
+            const price = document.getElementById('stickerPrice').innerText;
+            const phone = "201027946608"; 
+            const message = `أهلاً 7TB، حابب أطلب ستيكرات:\n- الخامة: ${material}\n- المقاس: ${size}\n- السعر: ${price}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+<nav class="container">
+    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">7TB<span>.</span></a></div>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#tshirts">تيشرتات</a></li>
+        <li><a href="index.html#mugs">مجات</a></li>
+        <li><a href="index.html#stickers">ستيكرات</a></li>
+        <li><a href="index.html#frames">براويز</a></li>
+    </ul>
+</nav>

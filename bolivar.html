@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تيشرت بوليفار مطبوع | 7TB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-container { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px 0; align-items: flex-start; }
+        
+        /* قسم الصور - اليمين */
+        .product-image-section { flex: 1; min-width: 300px; }
+        .main-image { background: #1a1a1a; height: 450px; border-radius: 15px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 15px; }
+        .main-image img { max-width: 100%; max-height: 100%; object-fit: contain; } /* لظهور الصورة كاملة بدون زوم */
+        
+        /* شبكة الخمس صور المصغرة */
+        .thumbnail-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .thumbnail { aspect-ratio: 1/1; border-radius: 8px; border: 2px solid #333; cursor: pointer; transition: 0.3s; overflow: hidden; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+        .thumbnail:hover, .thumbnail.active { border-color: #e67e22; }
+        .thumbnail img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        /* قسم التفاصيل - اليسار */
+        .product-info { flex: 1; min-width: 300px; }
+        .price-tag { color: #e67e22; font-size: 2.5rem; margin: 15px 0; font-weight: bold; }
+        .option-group { margin: 20px 0; }
+        .option-group label { display: block; margin-bottom: 8px; color: #a0a0a0; font-weight: bold; }
+        select { width: 100%; padding: 12px; background: #222; color: #fff; border: 1px solid #444; border-radius: 8px; font-size: 1rem; }
+        
+        .buy-now { display: block; background: #25d366; color: #fff; text-align: center; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-top: 30px; font-size: 1.2rem; transition: 0.3s; }
+        .buy-now:hover { background: #128c7e; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">7TB<span>.</span></div>
+            <a href="index.html" style="color: #fff; text-decoration: none;">← العودة للمتجر</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-container">
+            
+            <div class="product-image-section">
+                <div class="main-image">
+                    <img id="mainImg" src="bolivar_print1.jpg" alt="تيشرت بوليفار مطبوع">
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail" onclick="changeImage('bolivar_print1.jpg')"><img src="bolivar_print1.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('bolivar_print2.jpg')"><img src="bolivar_print2.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('bolivar_print3.jpg')"><img src="bolivar_print3.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('bolivar_print4.jpg')"><img src="bolivar_print4.jpg"></div>
+                    <div class="thumbnail" onclick="changeImage('bolivar_print5.jpg')"><img src="bolivar_print5.jpg"></div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>تيشرت بوليفار oversize مطبوع</h1>
+                <p class="price-tag">400 EGP</p>
+                <p>خامة بوليفار ثقيلة بريميوم مع طباعة ديجيتال عالية الدقة وثبات ممتاز مع الغسيل المتكرر.</p>
+                
+                <div class="option-group">
+                    <label>اللون المختار:</label>
+                    <select id="colorSelect">
+                        <option value="أسود">أسود</option>
+                        <option value="أبيض">أبيض</option>
+                        <option value="كحلي">كحلي</option>
+                        <option value="رمادي">رمادي</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label>المقاس:</label>
+                    <select id="sizeSelect">
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select>
+                </div>
+
+                <a href="#" onclick="orderViaWhatsApp('تيشرت بوليفار مطبوع', '400')" class="buy-now">اطلب عبر واتساب</a>
+                
+                
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function changeImage(fileName) {
+            document.getElementById('mainImg').src = fileName;
+        }
+
+        function orderViaWhatsApp(productName, price) {
+            const color = document.getElementById('colorSelect').value;
+            const size = document.getElementById('sizeSelect').value;
+            const phone = "201027946608"; 
+            const message = `أهلاً 7TB، حابب أطلب:\n- المنتج: ${productName}\n- اللون: ${color}\n- المقاس: ${size}\n- السعر: ${price} EGP`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+<nav class="container">
+    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">7TB<span>.</span></a></div>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#tshirts">تيشرتات</a></li>
+        <li><a href="index.html#mugs">مجات</a></li>
+        <li><a href="index.html#stickers">ستيكرات</a></li>
+        <li><a href="index.html#frames">براويز</a></li>
+    </ul>
+</nav>
+<p style="text-align: center; color: #ffcc00; font-size: 0.85rem; margin-top: 15px; line-height: 1.5; background: rgba(255, 204, 0, 0.1); padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00;">
+    ⚠️ <b>ملحوظة هامة:</b><br>
+    السعر الموضح للتصميم الكبير (وش وضهر).<br>
+    السعر يتغير حسب حجم التصميم أو في حالة طباعة (وش واحد).
+</p>

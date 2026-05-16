@@ -1,0 +1,147 @@
+/* الألوان الأساسية: أسود وفحمي مع لمسة ذهبية أو برتقالية */
+:root {
+    --bg-dark: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --accent: #e67e22; /* لون التميز */
+    --text-light: #eeeeee;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif; /* يفضل استدعاء خط Cairo من Google Fonts */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* القائمة العلوية */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #111, #0a0a0a);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* الشبكة البرمجية للمنتجات */
+.section-title {
+    margin: 40px 0 20px;
+    border-right: 4px solid var(--accent);
+    padding-right: 15px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.img-placeholder {
+    background: #333;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    color: var(--text-muted);
+}

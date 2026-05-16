@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مج مطبوع | 7TB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-container { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px 0; align-items: flex-start; }
+        /* وضع الصورة على اليمين */
+        .product-image { flex: 1; min-width: 300px; background: #1a1a1a; height: 450px; border-radius: 15px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .product-info { flex: 1; min-width: 300px; }
+        .price-tag { color: #e67e22; font-size: 2.5rem; margin: 15px 0; font-weight: bold; }
+        .option-group { margin: 20px 0; }
+        .option-group label { display: block; margin-bottom: 8px; color: #a0a0a0; font-weight: bold; }
+        input { width: 100%; padding: 12px; background: #222; color: #fff; border: 1px solid #444; border-radius: 8px; font-size: 1rem; outline: none; }
+        .buy-now { display: block; background: #25d366; color: #fff; text-align: center; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-top: 30px; font-size: 1.2rem; transition: 0.3s; }
+        .buy-now:hover { background: #128c7e; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">7TB<span>.</span></div>
+            <a href="index.html" style="color: #fff; text-decoration: none;">← العودة للمتجر</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="mug.jpg" alt="مج مطبوع 7TB">
+            </div>
+
+            <div class="product-info">
+                <h1>مج  مطبوع</h1>
+                <p class="price-tag">150 EGP</p>
+                <p>مج سيراميك أبيض عالي الجودة، طباعة حرارية ثابتة لا تتأثر بالغسيل. يمكنك طباعة صورتك أو تصميمك الخاص.</p>
+                
+                <div class="option-group">
+                    <label>الكمية:</label>
+                    <input type="number" id="mugQty" value="1" min="1" onchange="updateMugPrice()">
+                </div>
+
+                <p id="totalPriceDisplay" style="color: #a0a0a0; margin-top: 10px;">إجمالي السعر: 150 EGP</p>
+
+                <a href="#" onclick="orderMug()" class="buy-now">اطلب عبر واتساب</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateMugPrice() {
+            const qty = document.getElementById('mugQty').value;
+            const total = qty * 150;
+            document.getElementById('totalPriceDisplay').innerText = `إجمالي السعر: ${total} EGP`;
+        }
+
+        function orderMug() {
+            const qty = document.getElementById('mugQty').value;
+            const total = qty * 150;
+            const phone = "201027946608"; 
+            const message = `أهلاً 7TB، حابب أطلب مج مطبوع:\n- العدد: ${qty}\n- الإجمالي: ${total} EGP`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+<nav class="container">
+    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">7TB<span>.</span></a></div>
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#tshirts">تيشرتات</a></li>
+        <li><a href="index.html#mugs">مجات</a></li>
+        <li><a href="index.html#stickers">ستيكرات</a></li>
+        <li><a href="index.html#frames">براويز</a></li>
+    </ul>
+</nav>
